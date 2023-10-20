@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\title{MLP (Multilayer Perceptron)}
+\author{lkathary@student.21-school.ru, rglorfin@student.21-school.ru}
+\date{September 2022}
+
+\begin{document}
+\maketitle
+
+\section{MLP}
+\begin{itemize}
+    \item The program was developed in C++ language of \textbf{C++17} standard using g++ (GNU C++) compiler.
+    \item GUI implementation, based on the \textbf{QT} library with API for \textbf{C++17}.
+    \item The program provides the ability to
+    form and train neural network models to classify handwritten Latin letters.
+    \item The perceptron can:
+
+    \begin{itemize}
+        \item       classify images with handwritten letters of the Latin alphabet
+        \item       have from 2 to 5 hidden layers
+        \item       use a sigmoid activation function for each hidden layer
+        \item       be able to learn on an open dataset (e.g. EMNIST-letters presented in the datasets directory). The ratio of the test sample to the training one should be no more than 2:8, i.e. the test sample makes no more than 20% of the initial dataset
+        \item       show accuracy on a test sample over 70 percent
+        \item      be trained using the backpropagation method
+        \item      Work with mazes.
+    \end{itemize}
+
+    \item The perceptron is implemented in two ways:
+    \begin{itemize}
+        \item   in matrix form (all layers are represented as weight matrices)
+        \item   in graph form (each neuron is represented as some node object connected to other nodes by refs)
+    \end{itemize}
+
+    \item The input data is normalized (by size and color) before neural network execution,
+    in order to match the format of the EMNIST sample;
+    \item The interface of the program provides the ability to:
+      \begin{itemize}
+          \item  run the experiment on the test sample or on a part of it, given by a floating point number between 0 and 1 (where 0 is the empty sample - the degenerate situation, and 1 is the whole test sample). After the experiment, there should be an average accuracy, precision, recall, f-measure and total time spent on the experiment displayed on the screen
+          \item load BMP images (image size can be up to 512x512) with Latin letters and classify them
+          \item draw two-color square images by hand in a separate window
+          \item start the real-time training process for a user-defined number of epochs with displaying the error control values for each training epoch. Make a report as a graph of the error change calculated on the test sample for each training epoch
+          \item run the training process using cross-validation for a given number of groups k
+          \item switch perceptron implementation (matrix or graph)
+          \item switch the number of perceptron hidden layers (from 2 to 5)
+          \item save to a file and load weights of perceptron from a file
+    \end{itemize}
+\end{itemize}
+
+\end{document}
